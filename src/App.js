@@ -4,14 +4,17 @@ import Home from "./components/Home";
 import OfferRide from "./components/OfferRide";
 import Rewards from "./components/Rewards";
 import FAQ from "./components/FAQ";
+import NotFound from "./components/NotFound";
 
 const App = () => {
   return (
     <Routes>
       <Route exact path="/" element={<Home />} />
-      <Route exact path="/OfferRide" element={<OfferRide />} />
-      <Route exact path="/Rewards" element={<Rewards />} />
-      <Route exact path="/FAQ" element={<FAQ />} />
+      <Route path="/OfferRide" element={<OfferRide />} />
+      <Route path="/Rewards" element={<Rewards />} />
+      <Route path="/FAQ" element={<FAQ />} />
+      // Catch all unmatched routes
+      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 };
