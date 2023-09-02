@@ -1,0 +1,134 @@
+.solent__navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    padding: 2rem 8rem;
+}
+
+.solent__navbar-links {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.solent__navbar-links_logo {
+    margin-right: 8rem;
+}
+
+.solent__navbar-links_logo img {
+    height: 57px;
+    width: 60px;
+}
+
+.solent__navbar-links_container {
+    display: flex;
+    flex-direction: row;
+}
+
+.solent__navbar-sign {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.solent__navbar-links_container p,
+.solent__navbar-sign p,
+.solent__navbar-menu_container p {
+    color: #fff;
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 25px;
+    text-transform: capitalize;
+
+    margin: 0 1rem;
+    cursor: pointer;
+}
+
+.solent__navbar-sign button,
+.solent__navbar-menu_container button {
+    padding: 0.5rem 1rem;
+    color: black;
+    background: #fff;
+    font-family: var(--font-family);
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 25px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 30px;
+}
+
+.solent__navbar-menu {
+    margin-left: 1rem;
+
+    display: none;
+    position: relative;
+}
+
+.solent__navbar-menu svg {
+    cursor: pointer;
+}
+
+.solent__navbar-menu_container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    flex-direction: column;
+
+    text-align: end;
+    background: var(--color-footer);
+    padding: 2rem;
+    position: absolute;
+    right: 0;
+    top: 40px;
+    margin-top: 1rem;
+    min-width: 210px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+}
+
+.solent__navbar-menu_container p {
+    margin: 1rem 0;
+}
+
+.solent__navbar-menu_container-links-sign {
+    display: none;
+}
+
+@media screen and (max-width: 1050px) {
+    .solent__navbar-links_container {
+        display: none;
+    }
+
+    .solent__navbar-menu {
+        display: flex;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .solent__navbar {
+        padding: 2rem 4rem;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .solent__navbar {
+        padding: 2rem;
+    }
+
+    .solent__navbar-sign {
+        display: none;
+    }
+
+    .solent__navbar-menu_container {
+        top: 20px;
+    }
+
+    .solent__navbar-menu_container-links-sign {
+        display: block;
+    }
+}

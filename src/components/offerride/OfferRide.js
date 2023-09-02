@@ -1,5 +1,5 @@
 import React from "react";
-
+import "./OfferRide.css";
 const OfferRide = () => {
   return (
     <>
