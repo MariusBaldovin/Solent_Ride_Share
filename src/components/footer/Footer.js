@@ -20,7 +20,7 @@ const Footer = () => {
         <img src={instagram} alt="instagram" />
       </div>
       <div className="solent__quick-links">
-        <p>Quick Links</p>
+        <h1>Quick Links</h1>
         <p>
           <NavLink to="/AboutUs">About us</NavLink>
         </p>

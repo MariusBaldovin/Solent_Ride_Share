@@ -55,6 +55,10 @@
     margin-bottom: 20px;
 }
 
+.solent__quick-links .span {
+    color: #af1904;
+}
+
 .solent__quick-links p {
     font-weight: bold;
     margin-bottom: 10px;
