@@ -1,0 +1,142 @@
+.solent__background {
+    background-image: url("../../assets/background.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+    height: 100vh;
+    /* Set the height to 100% of the viewport height */
+    width: 100%;
+    /* Set the width to 100% */
+    position: relative;
+}
+
+/* Add responsiveness for smaller screens */
+@media screen and (max-width: 768px) {
+    .solent__background {
+        height: 80vh;
+        /* Adjust the height for smaller screens */
+    }
+}
+
+/* Add responsiveness for even smaller screens */
+@media screen and (max-width: 576px) {
+    .solent__background {
+        height: 60vh;
+        /* Adjust the height for smaller screens */
+    }
+}
+
+/*Your Commute your Way
+ Welcome to Solent RideShare! styling*/
+.solent__label {
+    height: 261px;
+    width: 631px;
+}
+
+.solent__label .solent__slogan {
+    color: transparent;
+    font-family: "Inter-Bold", Helvetica;
+    font-size: 3rem;
+    max-width: 90%;
+    font-weight: 700;
+    left: 20px;
+    letter-spacing: 0;
+    line-height: 67.9px;
+    position: relative;
+    width: 631px;
+    top: 30px;
+}
+
+.solent__label .solent__text-wrapper {
+    color: #ffffff;
+}
+
+.solent__label .welcome__span {
+    color: #caca07;
+}
+
+@media (max-width: 600px) {
+
+    .solent__label {
+        text-align: center;
+    }
+
+    .solent__slogan {
+        font-size: 2rem;
+    }
+
+}
+
+.searching {
+    background-color: #000000b2;
+    border-radius: 16px;
+    height: 80px;
+    position: relative;
+    width: 789px;
+    top: 50px;
+}
+
+.searching .find-a-ride-button {
+    background-color: #af1904;
+    border-radius: 10px;
+    box-shadow: 0px 20px 35px #df695126;
+    height: 43px;
+    left: 606px;
+    position: absolute;
+    top: 16px;
+    width: 159px;
+    color: #ffffff;
+}
+
+.searching .text-wrapper {
+    color: var(--white);
+    font-family: "Inter-Bold", Helvetica;
+    font-size: 16.7px;
+    font-weight: 700;
+    left: 36px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    text-align: center;
+    top: 9px;
+    white-space: nowrap;
+}
+
+.searching .div {
+    color: #ffffff;
+    font-family: "Inter-Regular", Helvetica;
+    font-size: 18.8px;
+    font-weight: 400;
+    left: 45px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 26px;
+    width: 158px;
+}
+
+.searching .text-wrapper-2 {
+    color: #ffffff;
+    font-family: "Inter-Regular", Helvetica;
+    font-size: 18.8px;
+    font-weight: 400;
+    left: 278px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 22px;
+    width: 45px;
+}
+
+.searching .text-wrapper-3 {
+    color: #ffffff;
+    font-family: "Inter-Regular", Helvetica;
+    font-size: 18.8px;
+    font-weight: 400;
+    left: 433px;
+    letter-spacing: 0;
+    line-height: normal;
+    position: absolute;
+    top: 23px;
+    width: 46px;
+}

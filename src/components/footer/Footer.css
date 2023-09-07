@@ -1,35 +1,29 @@
 /* Style for the footer container */
 .solent__footer {
-    background-color: black;
-    padding: 20px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    height: 127px;
-    left: 0;
+    flex-wrap: wrap;
+    padding: 20px;
+    background-color: black;
+    justify-content: center;
+    /* centers containers */
+}
+
+.solent__ride,
+.solent__quick-links,
+.solent__contact {
+    display: flex;
+    width: 30%;
+    flex-direction: column;
+    text-align: center;
 }
 
 
 /* Style for the SolentRideShare text */
-.solent__ride {
-    height: 26px;
-    width: 139px;
-}
+/* .solent__ride {
+} */
 
-.solent__ride .solent__ride-share {
-    color: transparent;
-    font-family: "Inter-ExtraBold", Helvetica;
-    font-size: 16px;
-    font-weight: 800;
-    left: 0;
-    letter-spacing: 0;
-    line-height: normal;
-    position: fixed;
-    top: 0;
-    width: 139px;
+.solent__ride-share {
+    margin-bottom: 20px;
 }
 
 .solent__ride .text-wrapper {
@@ -40,23 +34,42 @@
     color: #af1904;
 }
 
+.solent__social {
+    display: flex;
+    justify-content: center;
+
+}
+
 /* Style for the social media icons */
-.solent__social-media img {
-    width: 30px;
-    /* Adjust the size of icons as needed */
-    margin-right: 10px;
-    /* Spacing between icons */
+
+.social__media-icon {
+    fill: white;
+    width: 32px;
+    margin: 0 3px;
 }
 
-/* Style for the Quick Links section */
-.solent__quick-links {
-    flex-basis: 25%;
-    /* Adjust the width as needed */
-    margin-bottom: 20px;
+.social__media-icon:hover {
+    fill: #af1904;
+    transition: fill ease-in 0.3s;
 }
 
-.solent__quick-links .span {
+
+.quick-links,
+.contact {
+    display: block;
+    margin-bottom: 10px;
     color: #af1904;
+    font-weight: bold;
+    font-family: var(--font-family);
+}
+
+
+.solent__quick-links .quick-links {
+    color: #af1904;
+    font-weight: bold;
+    margin-bottom: 20px;
+    flex-basis: 25%;
+    font-family: var(--font-family);
 }
 
 .solent__quick-links p {
@@ -64,15 +77,15 @@
     margin-bottom: 10px;
 }
 
+/* Quick links */
 .solent__quick-links a {
     color: #fff;
-    text-decoration: none;
     display: block;
     margin-bottom: 5px;
 }
 
 .solent__quick-links a:hover {
-    text-decoration: underline;
+    color: #af1904;
 }
 
 /* Style for the Contact Us section */
@@ -95,6 +108,40 @@
     margin-bottom: 5px;
 }
 
+.solent__contact .contact {
+    color: #af1904;
+    font-weight: bold;
+    margin-bottom: 20px;
+    flex-basis: 25%;
+    font-family: var(--font-family);
+}
+
 .solent__contact a:hover {
-    text-decoration: underline;
+    color: #af1904;
+}
+
+.email {
+    margin-bottom: 10px;
+}
+
+@media (max-width: 600px) {
+
+    .solent__footer {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .solent__ride,
+    .solent__quick-links,
+    .solent__contact {
+        width: 100%;
+        margin: 1rem 0;
+    }
+
+    .solent__contact {
+        align-self: flex-start;
+        margin-bottom: 0;
+    }
+
 }
