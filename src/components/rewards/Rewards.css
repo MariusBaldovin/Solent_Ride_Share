@@ -1,0 +1,85 @@
+/* Rewards Container */
+.rewards-container {
+    background-color: #f5f5f5;
+    padding: 80px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Reward Items */
+.reward-item {
+    display: flex;
+    align-items: flex-start;
+    margin: 15px 0;
+}
+
+/* Reward Icons */
+.reward-icon {
+    font-size: 32px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ride-points {
+    background-color: #ffcc00;
+    /* Customize the icon background color */
+    color: #333;
+}
+
+.referral-program {
+    background-color: #3498db;
+    color: #fff;
+}
+
+.exclusive-promotions {
+    background-color: #e74c3c;
+    color: #fff;
+}
+
+/* Reward Details */
+.reward-details h3 {
+    font-size: 24px;
+    margin: 0;
+}
+
+.reward-details p {
+    color: #555;
+    margin: 10px 0;
+}
+
+/* Progress Bar */
+.progress-bar {
+    background-color: #ccc;
+    height: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.progress-fill {
+    background-color: #ffcc00;
+    /* Customize the progress fill color */
+    height: 100%;
+    border-radius: 5px;
+    text-align: right;
+    padding-right: 10px;
+    font-weight: bold;
+}
+
+/* Reward Info */
+.reward-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #777;
+    margin-top: 10px;
+}
+
+/* Space between Reward Items */
+.reward-item+.reward-item {
+    margin-top: 50px;
+}

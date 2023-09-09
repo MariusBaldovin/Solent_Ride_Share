@@ -44,7 +44,7 @@
     line-height: 67.9px;
     position: relative;
     width: 631px;
-    top: 30px;
+    top: 70px;
 }
 
 .solent__label .solent__text-wrapper {
@@ -61,7 +61,7 @@
         text-align: center;
     }
 
-    .solent__slogan {
+    .solent__label .solent__slogan {
         font-size: 2rem;
     }
 
@@ -73,13 +73,12 @@
     height: 80px;
     position: relative;
     width: 789px;
-    top: 50px;
+    top: 150px;
 }
 
 .searching .find-a-ride-button {
     background-color: #af1904;
     border-radius: 10px;
-    box-shadow: 0px 20px 35px #df695126;
     height: 43px;
     left: 606px;
     position: absolute;
@@ -88,7 +87,13 @@
     color: #ffffff;
 }
 
-.searching .text-wrapper {
+/* Hover effect: change background color and text color */
+.searching .find-a-ride-button:hover {
+    background-color: white;
+    color: #af1904;
+}
+
+.searching .solent__find-a-ride {
     color: var(--white);
     font-family: "Inter-Bold", Helvetica;
     font-size: 16.7px;
@@ -102,9 +107,8 @@
     white-space: nowrap;
 }
 
-.searching .div {
+.searching .solent__pickup-location {
     color: #ffffff;
-    font-family: "Inter-Regular", Helvetica;
     font-size: 18.8px;
     font-weight: 400;
     left: 45px;
@@ -115,28 +119,74 @@
     width: 158px;
 }
 
-.searching .text-wrapper-2 {
+.pickup__input-box::placeholder {
+    color: grey;
+}
+
+
+.searching .solent__pickup-date {
     color: #ffffff;
-    font-family: "Inter-Regular", Helvetica;
     font-size: 18.8px;
     font-weight: 400;
     left: 278px;
     letter-spacing: 0;
     line-height: normal;
     position: absolute;
-    top: 22px;
+    top: 26px;
     width: 45px;
 }
 
-.searching .text-wrapper-3 {
+
+.searching .solent__pickup-time {
     color: #ffffff;
-    font-family: "Inter-Regular", Helvetica;
     font-size: 18.8px;
     font-weight: 400;
     left: 433px;
     letter-spacing: 0;
     line-height: normal;
     position: absolute;
-    top: 23px;
+    top: 26px;
     width: 46px;
+}
+
+.pickup__input-box {
+    font-size: 16px;
+    font-weight: 400;
+    top: 23px;
+    width: 180px;
+    border-radius: 16px;
+}
+
+.pickup__location {
+    text-align: center;
+}
+
+input[type="date"] {
+    font-size: 16px;
+    font-weight: 400;
+    border-radius: 16px;
+    top: 23px;
+    width: 140px;
+    text-align: center;
+}
+
+
+input[type="time"] {
+    font-size: 16px;
+    font-weight: 400;
+    border-radius: 16px;
+    top: 23px;
+    width: 90px;
+    text-align: center;
+
+}
+
+
+/* Style SVG elements to look like links when hovered */
+.solent__pickup-date svg:hover,
+.solent__pickup-time svg:hover {
+    cursor: pointer;
+    /* Change cursor to pointer when hovering */
+    fill: #af1904;
+    /* Change fill color on hover to indicate interactivity */
 }

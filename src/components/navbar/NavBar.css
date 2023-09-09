@@ -92,9 +92,8 @@
 .solent__navbar-menu_container {
     display: flex;
     justify-content: flex-end;
-    align-items: flex-end;
+    align-items: center;
     flex-direction: column;
-
     text-align: center;
     background-color: black;
     padding: 3rem;
@@ -102,7 +101,8 @@
     right: 0;
     top: 40px;
     margin-top: 1rem;
-    min-width: 210px;
+    min-width: 410px;
+    min-height: 300px;
     border-radius: 5px;
 
 }
@@ -118,10 +118,6 @@
 
 .solent__navbar-menu_container-links-sign {
     display: none;
-}
-
-.solent__navbar-menu_container-links-sign p:hover {
-    color: #af1904;
 }
 
 @media screen and (max-width: 1050px) {
