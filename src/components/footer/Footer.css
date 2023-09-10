@@ -86,6 +86,7 @@
 
 .solent__quick-links a:hover {
     color: #af1904;
+    transition: fill ease-in 0.3s;
 }
 
 /* Style for the Contact Us section */
@@ -118,6 +119,7 @@
 
 .solent__contact a:hover {
     color: #af1904;
+    transition: fill ease-in 0.3s;
 }
 
 .email {

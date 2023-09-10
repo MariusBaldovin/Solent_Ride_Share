@@ -44,7 +44,9 @@ const Home = () => {
               Your Commute, <br />
               Your Way <br />
             </span>
-            <span className="welcome__span">Welcome to Solent RideShare!</span>
+            <span className="welcome__span">
+              Welcome to Solent <br /> RideShare!
+            </span>
           </p>
         </div>
         <div className="searching">

@@ -56,7 +56,7 @@ const Rewards = () => {
           </p>
           <div className="reward-info">
             <span>
-              Current Promotion: Get 50% off your first 3 rides. Use the code
+              Current Promotion: Get 50% off your first 3 rides. 1Use the code
               solent50off
             </span>
             <span>Next Promotion: 10% Off</span>

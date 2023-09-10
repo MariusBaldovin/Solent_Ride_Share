@@ -61,16 +61,15 @@ const Footer = () => {
         <p>
           <NavLink to="/PrivacyPolicy">Privacy Policy</NavLink>
         </p>
+      </div>
+      <div className="solent__contact">
+        <span className="contact">Contact</span>
+        <p>
+          <NavLink to="/email">Email Us</NavLink>
+        </p>
         <p>
           <NavLink to="/Support">Support</NavLink>
         </p>
-      </div>
-      <div className="solent__contact">
-        <span className="contact">Contact Us</span>
-        <p>
-          <NavLink to="/email">Ride_share@solent.ac.uk</NavLink>
-        </p>
-        <p>+44 999 9999 999</p>
       </div>
     </div>
   );

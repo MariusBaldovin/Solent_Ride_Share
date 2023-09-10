@@ -1,0 +1,50 @@
+/* AboutUs.css */
+.about-us-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    /* Set container to full viewport height */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: black;
+    /* Change background color to black */
+    color: white;
+    /* Change text color to white */
+}
+
+.about-us-header {
+    margin-bottom: 20px;
+}
+
+.team-photo {
+    max-width: 100%;
+    max-height: 60vh;
+    /* Limit the image height */
+    margin-bottom: 20px;
+    transition: transform 0.3s;
+    /* Add a smooth transition effect */
+}
+
+/* Style for the image when hovered over */
+.team-photo:hover {
+    transform: scale(1.1);
+    /* Scale the image to 110% size on hover */
+}
+
+.about-us-content {
+    flex-grow: 1;
+    /* Grow to fill remaining vertical space */
+    padding: 0 20px;
+    overflow-y: auto;
+    /* Add scroll if content overflows */
+}
+
+/* Additional styling if needed */
+.about-us-content p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Add more styles as needed for your specific content */

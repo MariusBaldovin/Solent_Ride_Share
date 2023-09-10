@@ -8,14 +8,13 @@
 }
 
 .solent__navbar-links {
-    flex: 1;
+
     display: flex;
-    justify-content: flex-start;
     align-items: center;
 }
 
 .solent__navbar-links_logo {
-    margin-right: 8rem;
+    margin-right: 2rem;
 }
 
 .solent__navbar-links_logo img {
@@ -31,6 +30,7 @@
 /* Add color on hover */
 .solent__navbar-links_container a:hover {
     color: #af1904;
+    transition: fill ease-in 0.3s;
 }
 
 .solent__navbar-sign {
@@ -41,6 +41,7 @@
 
 .solent__navbar-sign p:hover {
     color: #af1904;
+    transition: fill ease-in 0.3s;
 }
 
 .solent__navbar-links_container p,
@@ -77,6 +78,8 @@
 .solent__navbar-sign button:hover,
 .solent__navbar-menu_container button:hover {
     background-color: #af1904;
+    color: white;
+    transition: fill ease-in 0.3s;
 }
 
 .solent__navbar-menu {
@@ -91,25 +94,30 @@
 
 .solent__navbar-menu_container {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
     flex-direction: column;
     text-align: center;
-    background-color: black;
+    background-color: rgb(122, 14, 14);
     padding: 3rem;
-    position: absolute;
+    position: fixed;
+    /* Use fixed positioning to cover the screen */
+    top: 0;
+    left: 0;
     right: 0;
-    top: 40px;
-    margin-top: 1rem;
+    bottom: 0;
+    z-index: 1;
     min-width: 410px;
     min-height: 300px;
     border-radius: 5px;
-
 }
+
+
 
 /* Add color on hover */
 .solent__navbar-menu_container a:hover {
     color: #af1904;
+    transition: fill ease-in 0.3s;
 }
 
 .solent__navbar-menu_container p {
@@ -152,4 +160,10 @@
     .solent__navbar-menu_container-links-sign {
         display: block;
     }
+}
+
+/* avtive link colour #af1904 */
+.solent__navbar-links_container a.active,
+.solent__navbar-menu_container a.active {
+    color: #caca07;
 }

@@ -1,30 +1,15 @@
 .solent__background {
-    background-image: url("../../assets/background.png");
+    background-image: url("../../assets/background.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: top;
-    height: 100vh;
+    height: 70vh;
     /* Set the height to 100% of the viewport height */
     width: 100%;
     /* Set the width to 100% */
     position: relative;
 }
 
-/* Add responsiveness for smaller screens */
-@media screen and (max-width: 768px) {
-    .solent__background {
-        height: 80vh;
-        /* Adjust the height for smaller screens */
-    }
-}
-
-/* Add responsiveness for even smaller screens */
-@media screen and (max-width: 576px) {
-    .solent__background {
-        height: 60vh;
-        /* Adjust the height for smaller screens */
-    }
-}
 
 /*Your Commute your Way
  Welcome to Solent RideShare! styling*/
@@ -55,25 +40,20 @@
     color: #caca07;
 }
 
-@media (max-width: 600px) {
-
-    .solent__label {
-        text-align: center;
-    }
-
-    .solent__label .solent__slogan {
-        font-size: 2rem;
-    }
-
-}
 
 .searching {
     background-color: #000000b2;
     border-radius: 16px;
     height: 80px;
     position: relative;
-    width: 789px;
+    max-width: 789px;
+    width: 80%;
     top: 150px;
+    left: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
 }
 
 .searching .find-a-ride-button {
@@ -81,29 +61,29 @@
     border-radius: 10px;
     height: 43px;
     left: 606px;
-    position: absolute;
-    top: 16px;
-    width: 159px;
+    position: relative;
+    max-width: 159px;
+    width: 100%;
     color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Hover effect: change background color and text color */
 .searching .find-a-ride-button:hover {
-    background-color: white;
+    background-color: #ffffff;
     color: #af1904;
+    transition: fill ease-in 0.3s;
 }
 
 .searching .solent__find-a-ride {
-    color: var(--white);
-    font-family: "Inter-Bold", Helvetica;
     font-size: 16.7px;
     font-weight: 700;
-    left: 36px;
     letter-spacing: 0;
     line-height: normal;
-    position: absolute;
+    position: relative;
     text-align: center;
-    top: 9px;
     white-space: nowrap;
 }
 
@@ -189,4 +169,70 @@ input[type="time"] {
     /* Change cursor to pointer when hovering */
     fill: #af1904;
     /* Change fill color on hover to indicate interactivity */
+    transition: fill ease-in 0.3s;
+}
+
+/* Add responsiveness for smaller screens */
+@media screen and (max-width: 768px) {
+    .solent__background {
+        height: 80vh;
+    }
+
+    .solent__label {
+        padding: 0 10px;
+    }
+
+    .solent__slogan {
+        font-size: 1rem;
+
+    }
+
+    .solent__text-wrapper,
+    .welcome__span {
+        display: block;
+        line-height: 1.5;
+    }
+
+    .searching {
+        width: 90%;
+        max-width: 600px;
+    }
+
+
+
+}
+
+/* Add responsiveness for even smaller screens */
+@media screen and (max-width: 576px) {
+    .solent__background {
+        height: 60vh;
+        /* Adjust the height for smaller screens */
+    }
+
+    /* Mobile screens */
+    @media (max-width: 576px) {
+
+        .solent__label {
+            width: 100%;
+        }
+
+        .solent__label .solent__slogan {
+            font-size: 1.5rem;
+        }
+
+        .searching {
+            width: 90%;
+            max-width: none;
+            padding: 20px;
+            top: 10px;
+            height: 60px;
+        }
+
+        /* Set the font size for Pick up location? , Date, Time and for it's input*/
+        .searching span,
+        .searching input {
+            font-size: 14px;
+        }
+
+    }
 }

@@ -19,10 +19,13 @@ const FAQItem = styled.div`
 
 const FAQQuestion = styled.div`
   font-weight: bold;
+  transition: color 0.3s; 
+  &:hover {
+    color: #af1904; 
 `;
 
 const FAQAnswer = styled.div`
-  color: #af1904; /* Set the answer text color to #af1904 */
+  color: white; /* Set the answer text color to #af1904 */
   margin-top: 20px; /* Add a line space after the question */
 `;
 

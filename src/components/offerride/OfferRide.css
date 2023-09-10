@@ -1,3 +1,28 @@
+.input-container input[type="text"],
+.input-container input[type="date"],
+.input-container input[type="time"] {
+    width: 414px;
+    height: 49px;
+    background-color: white;
+    border: none;
+    outline: none;
+    color: black;
+    padding: 10px;
+    text-align: center;
+    border-radius: 16px;
+    /* Apply border-radius to all input types */
+    font-size: 18.8px;
+    font-weight: 400;
+}
+
+.input-field::placeholder {
+    color: black;
+}
+
+.input-field:focus::placeholder {
+    color: transparent;
+}
+
 .offer-ride-container {
     background-color: black;
     display: flex;
@@ -12,37 +37,6 @@
     position: relative;
     bottom: 300px;
     left: 100px;
-
-}
-
-/* Set specific width and height for Date and Time input fields */
-.input-container input[type="date"],
-.input-container input[type="time"] {
-    width: 414px;
-    height: 49px;
-}
-
-
-.input-field {
-    width: 414px;
-    height: 49px;
-    background-color: white;
-    border: none;
-    outline: none;
-    color: black;
-    padding: 10px;
-    text-align: center;
-    border-radius: 16px;
-    font-size: 18.8px;
-    font-weight: 400;
-}
-
-.input-field::placeholder {
-    color: black;
-}
-
-.input-field:focus::placeholder {
-    color: transparent;
 }
 
 .offer-a-ride-button {
@@ -52,7 +46,7 @@
     width: 159px;
     color: #ffffff;
     margin-bottom: 10px;
-    margin-top: -220px;
+    margin-top: -265px;
     bottom: 40px;
     align-items: center;
     justify-content: center;
@@ -66,6 +60,7 @@
 .offer-a-ride-button:hover {
     background-color: white;
     color: #af1904;
+    transition: fill ease-in 0.3s;
 }
 
 .solent__offer-a-ride {
@@ -79,9 +74,89 @@
 }
 
 .solent__dash-img {
-
     text-align: right;
     position: relative;
     right: 120px;
+}
 
+/* Tablet Styles */
+@media screen and (max-width: 768px) {
+    .offer-ride-container {
+        padding: 10px;
+        /* Adjust padding for smaller screens */
+    }
+
+    .input-container {
+        margin-bottom: 20px;
+        /* Increase margin between input containers */
+        bottom: auto;
+        /* Remove the 'bottom' positioning */
+        left: 0;
+        /* Reset 'left' positioning */
+    }
+
+    .offer-a-ride-button {
+        margin-top: -15px;
+        /* Adjust margin-top */
+        bottom: 0;
+        /* Remove the 'bottom' positioning */
+        left: 0;
+        /* Reset 'left' positioning */
+    }
+
+    .solent__dash-img {
+        right: 0;
+        /* Reset 'right' positioning */
+    }
+}
+
+/* Mobile Styles */
+@media screen and (max-width: 576px) {
+
+    /* For mobile screens */
+    .solent__dash-img {
+        display: none;
+    }
+
+    .input-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* Center vertically */
+        margin-bottom: 20px;
+        /* Adjust spacing between input boxes */
+
+
+    }
+
+    /* Reduce font size for input boxes */
+    .input-field {
+        font-size: 14px;
+        text-align: center;
+        /* Center text in input boxes */
+        width: 100%;
+        /* Make input boxes full width */
+        max-width: 300px;
+        /* Limit maximum width of input boxes */
+        margin: 5px 0;
+        /* Adjust spacing between input boxes */
+
+    }
+
+    /* Center the "Offer this Ride" button */
+    .offer-a-ride-button {
+        display: flex;
+        flex-direction: column;
+        /* Stack text and button vertically */
+        align-items: center;
+        justify-content: center;
+        margin-top: 20px;
+        text-align: center;
+        left: 150px;
+    }
+
+    .solent__offer-a-ride {
+        font-size: 14px;
+        /* Decrease font size for mobile */
+    }
 }

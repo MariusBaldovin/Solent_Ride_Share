@@ -29,8 +29,12 @@ const Navbar = () => {
         </div>
       </div>
       <div className="solent__navbar-sign">
-        <p>Sign in</p>
-        <button type="button">Sign up</button>
+        <NavLink to="/SignIn">
+          <p>Sign in</p>
+        </NavLink>
+        <NavLink to="/SignUp">
+          <button type="button">Sign up</button>
+        </NavLink>
       </div>
       <div className="solent__navbar-menu">
         {toggleMenu ? (
@@ -59,7 +63,7 @@ const Navbar = () => {
                 <NavLink to="/Rewards">Rewards</NavLink>
               </p>
               <p>
-                <NavLink to="/FAQ">FAQ</NavLink>
+                <NavLink to="/FAQ">FAQ </NavLink>
               </p>
             </div>
             <div className="solent__navbar-menu_container-links-sign">

@@ -1,0 +1,114 @@
+/* SignIn.css */
+
+/* Set the background to cover the entire screen */
+.sign-in-body {
+    background-image: url("../../assets/SignUp-background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.signin-form {
+    background: rgba(0, 0, 0, 0.7);
+    /* Add a semi-transparent background color to the form */
+    color: white;
+    padding: 20px;
+    width: 50%;
+    border-radius: 10px;
+    /* Add border-radius for rounded corners */
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.5);
+    /* Add a shadow for depth */
+    text-align: center;
+}
+
+.signin-form h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.signin-form label {
+    display: block;
+}
+
+.signin-form input,
+.signin-form button {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    border: none;
+}
+
+.signin-form input[type="email"],
+.signin-form input[type="password"] {
+    margin-bottom: 20px;
+}
+
+/* Customize button styles */
+button[type="submit"] {
+    background-color: #af1904;
+    color: white;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: white;
+    color: #af1904;
+}
+
+button.google {
+    background-color: green;
+    color: white;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+button.google:hover {
+    background-color: white;
+    color: green;
+}
+
+button.facebook {
+    background-color: blue;
+    color: white;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+button.facebook:hover {
+    background-color: white;
+    color: blue;
+}
+
+/* Style for the "Sign up" link */
+.signin-form .message a {
+    color: yellow;
+    /* Set the initial link color to yellow */
+    transition: color 0.3s;
+    /* Add a transition for smooth color change */
+}
+
+/* Style for the "Sign up" link on hover */
+.signin-form .message a:hover {
+    color: #af1904;
+    /* Change to #af1904 on hover */
+}
+
+/* For tablet screens */
+@media (max-width: 768px) {
+    .signin-form {
+        width: 70%;
+        /* Adjust the form width for tablets */
+    }
+}
+
+/* For mobile screens */
+@media (max-width: 480px) {
+    .signin-form {
+        width: 90%;
+        /* Adjust the form width for mobiles */
+    }
+}
