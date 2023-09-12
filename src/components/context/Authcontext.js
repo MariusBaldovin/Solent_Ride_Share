@@ -5,6 +5,7 @@ import {
   signInWithEmailAndPassword,
   signOut as signOutFirebase,
   onAuthStateChanged,
+  sendPasswordResetEmail,
 } from "firebase/auth";
 
 // Create a context for managing authentication
@@ -35,6 +36,12 @@ export const AuthContextProvider = ({ children }) => {
     return signOutFirebase(auth);
   };
 
+  // Function to reset password
+  const forgotPassword = (email) => {
+    //
+    return sendPasswordResetEmail(auth, email);
+  };
+
   // Listen for changes in authentication state
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -58,6 +65,7 @@ export const AuthContextProvider = ({ children }) => {
     signUp,
     signIn,
     signOut,
+    forgotPassword,
   };
 
   return (
