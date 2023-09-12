@@ -3,9 +3,11 @@ import "./NavBar.css";
 import logo from "../../assets/logo.svg";
 import { RiMenu3Line, RiCloseLine } from "react-icons/ri";
 import { NavLink } from "react-router-dom";
+import { useAuth } from "../context/Authcontext"; // Import the useAuth hook
 
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
+  const { currentUser, signOut } = useAuth(); // Get the user's authentication status and signOut function
 
   return (
     <div className="solent__navbar">
@@ -29,12 +31,21 @@ const Navbar = () => {
         </div>
       </div>
       <div className="solent__navbar-sign">
-        <NavLink to="/SignIn">
-          <p>Sign in</p>
-        </NavLink>
-        <NavLink to="/SignUp">
-          <button type="button">Sign up</button>
-        </NavLink>
+        {currentUser ? ( // Check if the user is logged in
+          <>
+            <p>Welcome {currentUser.displayName}</p>
+            <button onClick={signOut}>Sign Out</button>
+          </>
+        ) : (
+          <>
+            <NavLink to="/SignIn">
+              <p>Sign in</p>
+            </NavLink>
+            <NavLink to="/SignUp">
+              <button type="button">Sign up</button>
+            </NavLink>
+          </>
+        )}
       </div>
       <div className="solent__navbar-menu">
         {toggleMenu ? (
@@ -67,8 +78,21 @@ const Navbar = () => {
               </p>
             </div>
             <div className="solent__navbar-menu_container-links-sign">
-              <p>Sign in</p>
-              <button type="button">Sign up</button>
+              {currentUser ? ( // Check if the user is logged in for mobile version
+                <>
+                  <p>Welcome {currentUser.displayName}</p>
+                  <button onClick={signOut}>Sign Out</button>
+                </>
+              ) : (
+                <>
+                  <NavLink to="/SignIn">
+                    <p>Sign in</p>
+                  </NavLink>
+                  <NavLink to="/SignUp">
+                    <button type="button">Sign up</button>
+                  </NavLink>
+                </>
+              )}
             </div>
           </div>
         )}

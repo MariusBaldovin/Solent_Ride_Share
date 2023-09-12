@@ -49,6 +49,30 @@
     margin-bottom: 20px;
 }
 
+.error {
+    color: #af1904;
+    font-size: 12px;
+    position: absolute;
+    right: 10px;
+    top: 35%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.error_empty-field {
+    color: #af1904;
+    font-size: 12px;
+    position: absolute;
+    left: 10px;
+    top: 35%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.name-error {
+    position: relative;
+}
+
 /* Customize button styles */
 button[type="submit"] {
     background-color: #af1904;

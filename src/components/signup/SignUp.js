@@ -1,8 +1,12 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth"; // Import the createUserWithEmailAndPassword function
+import { auth } from "../firebase"; // Import your Firebase authentication instance
 import "./SignUp.css";
 
-function SignUp() {
+const SignUp = () => {
+  /*firebase authentication using email and password*/
+
   const [name, setName] = useState("");
   const [nameErrors, setNameErrors] = useState({});
   const [email, setEmail] = useState("");
@@ -13,9 +17,12 @@ function SignUp() {
   const [passwordErrors, setPasswordErrors] = useState({});
   const [confirmPassword, setConfirmPassword] = useState("");
   const [confirmPasswordErrors, setConfirmPasswordErrors] = useState({});
+  //const to direct user to home page after creating account
+  const navigate = useNavigate();
 
   const [errors, setErrors] = useState({});
 
+  //name error on the right side of input box in real time if name not having more than 3 characters
   const handleNameChange = (e) => {
     setName(e.target.value);
 
@@ -28,6 +35,7 @@ function SignUp() {
     }
   };
 
+  //email error on the right side of input box in real time if email not valid
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
 
@@ -40,6 +48,7 @@ function SignUp() {
     }
   };
 
+  //student number error on the right side of input box in real time if student number is not 8 digits
   const handleStudentNumberChange = (e) => {
     setStudentNumber(e.target.value);
 
@@ -52,6 +61,7 @@ function SignUp() {
     }
   };
 
+  //password error on the right side of input box in real time if password don't have minimum 8 characters
   const handlePasswordChange = (e) => {
     setPassword(e.target.value);
 
@@ -64,10 +74,11 @@ function SignUp() {
     }
   };
 
+  //password error on the right side of input box in real time if password don't match
   const handleConfirmPasswordChange = (e) => {
     setConfirmPassword(e.target.value);
 
-    if (e.target.value != password) {
+    if (e.target.value !== password) {
       setConfirmPasswordErrors({
         mismatch: "Passwords do not match",
       });
@@ -76,10 +87,11 @@ function SignUp() {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     let errors = {};
+
     //name validation
     if (!name) {
       errors.name = "Name is required";
@@ -116,6 +128,27 @@ function SignUp() {
     }
 
     setErrors(errors);
+    // Check if there are no validation errors
+    if (Object.keys(errors).length === 0) {
+      try {
+        // Perform Firebase registration with name, email, student number, and password
+        const userCredential = await createUserWithEmailAndPassword(
+          auth,
+          email,
+          password
+        );
+
+        const user = userCredential.user;
+
+        // Set the user's displayName to the provided name
+        await updateProfile(user, {
+          displayName: name,
+        });
+        navigate("/SignIn"); //redirect user to Sign in page after succesfully registration
+      } catch (error) {
+        console.error("Error creating user:", error.message);
+      }
+    }
   };
 
   return (
@@ -123,94 +156,110 @@ function SignUp() {
       <form className="signup-form" onSubmit={handleSubmit} noValidate>
         <h1>Sign Up</h1>
 
-        {errors.name && <p className="error">{errors.name}</p>}
+        {/* Name Input and error handling */}
         <div className="name-error">
           <input
             id="name-input"
             type="text"
-            placeholder="Name"
+            placeholder={!name && !errors.name ? "Name" : ""}
             value={name}
             onChange={handleNameChange}
             className={nameErrors.minLength ? "input-error" : ""}
           />
+          {!name && errors.name && (
+            <p className="error_empty-field">{errors.name}</p>
+          )}
           {nameErrors.minLength && (
             <p className="error">{nameErrors.minLength}</p>
           )}
         </div>
 
-        {errors.email && <p className="error">{errors.email}</p>}
+        {/* Email Input and error handling */}
         <div className="name-error">
           <input
             id="email-input"
             type="email"
-            placeholder="Email"
+            placeholder={!email && !errors.email ? "Email" : ""}
             value={email}
             onChange={handleEmailChange}
             className={emailErrors.invalid ? "input-error" : ""}
           />
+          {!email && errors.email && (
+            <p className="error_empty-field">{errors.email}</p>
+          )}
           {emailErrors.invalid && (
             <p className="error">{emailErrors.invalid}</p>
           )}
         </div>
 
+        {/* Student Number Input and error handling */}
         <div className="name-error">
           <input
             id="studentNumber-input"
             type="text"
-            placeholder="Student Number"
+            placeholder={
+              !studentNumber && !errors.studentNumber ? "Student Number" : ""
+            }
             value={studentNumber}
             onChange={handleStudentNumberChange}
             className={studentNumberErrors.invalid ? "input-error" : ""}
           />
+          {!studentNumber && errors.studentNumber && (
+            <p className="error_empty-field">{errors.studentNumber}</p>
+          )}
           {studentNumberErrors.invalid && (
             <p className="error">{studentNumberErrors.invalid}</p>
           )}
         </div>
 
+        {/* Password Input and error handling */}
         <div className="name-error">
           <input
             id="password-input"
             type="password"
-            placeholder="Password"
+            placeholder={!password && !errors.password ? "Password" : ""}
             value={password}
             onChange={handlePasswordChange}
             className={passwordErrors.minLength ? "input-error" : ""}
           />
+          {!password && errors.password && (
+            <p className="error_empty-field">{errors.password}</p>
+          )}
           {passwordErrors.minLength && (
             <p className="error">{passwordErrors.minLength}</p>
           )}
         </div>
 
-        {errors.confirmPassword && (
-          <p className="error">{errors.confirmPassword}</p>
-        )}
-
+        {/* Confirm Password Input and error handling */}
         <div className="name-error">
           <input
             id="confirmPassword-input"
             type="password"
-            placeholder="Confirm Password"
+            placeholder={
+              !confirmPassword && !errors.confirmPassword
+                ? "Confirm Password"
+                : ""
+            }
             value={confirmPassword}
             onChange={handleConfirmPasswordChange}
             className={confirmPasswordErrors.mismatch ? "input-error" : ""}
           />
+          {!confirmPassword && errors.confirmPassword && (
+            <p className="error_empty-field">{errors.confirmPassword}</p>
+          )}
           {confirmPasswordErrors.mismatch && (
             <p className="error">{confirmPasswordErrors.mismatch}</p>
           )}
         </div>
-
         <button type="submit">Register</button>
-
         <p className="message">
           Already have an account? <NavLink to="/SignIn">Sign in</NavLink>
         </p>
-
         <button className="google">Login with Google</button>
-
         <button className="facebook">Login with Facebook</button>
       </form>
     </div>
   );
-}
+};
 
 export default SignUp;
