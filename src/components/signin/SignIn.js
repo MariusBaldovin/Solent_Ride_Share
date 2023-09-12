@@ -10,7 +10,7 @@ const SignIn = () => {
   const [password, setPassword] = useState("");
   const [passwordErrors, setPasswordErrors] = useState({});
   const navigate = useNavigate(); // Use the useNavigate hook to navigate to other pages
-  const { signIn } = useAuth(); // Get the signIn function from your authentication context
+  const { signIn, signInWithGoogle, signInWithFacebook } = useAuth(); // Get the signIn, google and facebook functions from your authentication context
 
   const [errors, setErrors] = useState({});
 
@@ -71,6 +71,26 @@ const SignIn = () => {
     }
   };
 
+  const handleGoogleSignIn = async () => {
+    try {
+      await signInWithGoogle();
+      navigate("/"); //redirect user to the home page after succesfully login with google account
+    } catch (error) {
+      console.error("Error signing in with Google:", error.message);
+      // Handle the error, possibly by displaying it to the user
+    }
+  };
+
+  const handleFacebookSignIn = async () => {
+    try {
+      await signInWithFacebook();
+      navigate("/"); //redirect user to the home page after succesfully login with facebook account
+    } catch (error) {
+      console.error("Error signing in with Facebook:", error.message);
+      // Handle the error, possibly by displaying it to the user
+    }
+  };
+
   return (
     <div className="sign-in-body">
       <form className="signin-form" onSubmit={handleSubmit} noValidate>
@@ -117,9 +137,13 @@ const SignIn = () => {
           Don't have an account? <NavLink to="/SignUp">Sign up</NavLink>
         </p>
 
-        <button className="google">Login with Google</button>
+        <button className="google" onClick={handleGoogleSignIn}>
+          Login with Google
+        </button>
 
-        <button className="facebook">Login with Facebook</button>
+        <button className="facebook" onClick={handleFacebookSignIn}>
+          Login with Facebook
+        </button>
       </form>
     </div>
   );

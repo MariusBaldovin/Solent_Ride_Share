@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth"; // Import the createUserWithEmailAndPassword function
 import { auth } from "../firebase"; // Import your Firebase authentication instance
+import { useAuth } from "../context/Authcontext";
 import "./SignUp.css";
 
 const SignUp = () => {
@@ -19,6 +20,7 @@ const SignUp = () => {
   const [confirmPasswordErrors, setConfirmPasswordErrors] = useState({});
   //const to direct user to home page after creating account
   const navigate = useNavigate();
+  const { signUp, signInWithGoogle, signInWithFacebook } = useAuth(); // Use the useAuth hook for sign in with google and facebook
 
   const [errors, setErrors] = useState({});
 
@@ -151,6 +153,26 @@ const SignUp = () => {
     }
   };
 
+  const handleGoogleSignIn = async () => {
+    try {
+      await signInWithGoogle();
+      navigate("/"); //redirect user to the home page after succesfully login with google account
+    } catch (error) {
+      console.error("Error signing in with Google:", error.message);
+      // Handle the error, possibly by displaying it to the user
+    }
+  };
+
+  const handleFacebookSignIn = async () => {
+    try {
+      await signInWithFacebook();
+      navigate("/"); //redirect user to the home page after succesfully login with facebook account
+    } catch (error) {
+      console.error("Error signing in with Facebook:", error.message);
+      // Handle the error, possibly by displaying it to the user
+    }
+  };
+
   return (
     <div className="sign_up-body">
       <form className="signup-form" onSubmit={handleSubmit} noValidate>
@@ -255,8 +277,12 @@ const SignUp = () => {
         <p className="message">
           Already have an account? <NavLink to="/SignIn">Sign in</NavLink>
         </p>
-        <button className="google">Login with Google</button>
-        <button className="facebook">Login with Facebook</button>
+        <button className="google" onClick={handleGoogleSignIn}>
+          Login with Google
+        </button>
+        <button className="facebook" onClick={handleFacebookSignIn}>
+          Login with Facebook
+        </button>
       </form>
     </div>
   );

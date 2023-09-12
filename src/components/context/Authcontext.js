@@ -45,10 +45,25 @@ export const AuthContextProvider = ({ children }) => {
     return sendPasswordResetEmail(auth, email);
   };
 
-  //
+  //sign in with google function
+  const signInWithGoogle = async () => {
+    try {
+      const provider = new GoogleAuthProvider();
+      await signInWithPopup(auth, provider);
+    } catch (error) {
+      console.error("Error signing in with Google:", error.message);
+    }
+  };
 
-  const signInWithGoogle = () => {
-    //
+  //sign in with facebook function
+
+  const signInWithFacebook = async () => {
+    try {
+      const provider = new FacebookAuthProvider();
+      await signInWithPopup(auth, provider);
+    } catch (error) {
+      console.error("Error signing in with Facebook:", error.message);
+    }
   };
 
   // Listen for changes in authentication state
@@ -75,6 +90,8 @@ export const AuthContextProvider = ({ children }) => {
     signIn,
     signOut,
     forgotPassword,
+    signInWithGoogle,
+    signInWithFacebook,
   };
 
   return (
