@@ -6,6 +6,9 @@ import {
   signOut as signOutFirebase,
   onAuthStateChanged,
   sendPasswordResetEmail,
+  signInWithPopup,
+  GoogleAuthProvider,
+  FacebookAuthProvider,
 } from "firebase/auth";
 
 // Create a context for managing authentication
@@ -40,6 +43,12 @@ export const AuthContextProvider = ({ children }) => {
   const forgotPassword = (email) => {
     //
     return sendPasswordResetEmail(auth, email);
+  };
+
+  //
+
+  const signInWithGoogle = () => {
+    //
   };
 
   // Listen for changes in authentication state
