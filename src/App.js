@@ -14,6 +14,7 @@ import {
   Support,
   SignUp,
   SignIn,
+  RidesOffered,
 } from "./components";
 import "./App.css";
 import { AuthContextProvider } from "./components/context/Authcontext";
@@ -34,6 +35,7 @@ const App = () => {
             <Route path="/Support" element={<Support />} />
             <Route path="/SignUp" element={<SignUp />} />
             <Route path="/SignIn" element={<SignIn />} />
+            <Route path="/RidesOffered" element={<RidesOffered />} />
             // Catch all unmatched routes
             <Route path="*" element={<NotFound />} />
           </Routes>

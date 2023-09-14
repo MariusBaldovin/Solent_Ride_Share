@@ -11,3 +11,4 @@ export { default as PrivacyPolicy } from "./privacypolicy/PrivacyPolicy";
 export { default as Support } from "./support/Support";
 export { default as SignUp } from "./signup/SignUp";
 export { default as SignIn } from "./signin/SignIn";
+export { default as RidesOffered } from "./RidesOffered/RidesOffered";

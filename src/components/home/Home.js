@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./Home.css";
 
 const Home = () => {
@@ -50,9 +51,6 @@ const Home = () => {
           </p>
         </div>
         <div className="searching">
-          <a href="#" className="find-a-ride-button">
-            <div className="solent__find-a-ride">Find a Ride</div>
-          </a>
           <div className="solent__pickup-location">
             {editingLocation ? (
               <input
@@ -152,6 +150,9 @@ const Home = () => {
               </>
             )}
           </div>
+          <Link to="/RidesOffered" className="find-a-ride-button">
+            <div className="solent__find-a-ride">Find a Ride</div>
+          </Link>
         </div>
       </div>
     </>

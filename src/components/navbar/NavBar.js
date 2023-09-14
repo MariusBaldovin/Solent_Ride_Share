@@ -8,6 +8,9 @@ import { useAuth } from "../context/Authcontext"; // Import the useAuth hook
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
   const { currentUser, signOut } = useAuth(); // Get the user's authentication status and signOut function
+  const hideMenu = () => {
+    setToggleMenu(false);
+  }; // const to hide toggle menu on mobile vesrion after click
 
   return (
     <div className="solent__navbar">
@@ -64,16 +67,18 @@ const Navbar = () => {
         {toggleMenu && (
           <div className="solent__navbar-menu_container scale-up-center">
             <div className="solent__navbar-menu_container-links">
-              <p>
+              {/* Menu links */}
+              <p onClick={hideMenu}>
                 <NavLink to="/">Home</NavLink>
               </p>
-              <p>
+
+              <p onClick={hideMenu}>
                 <NavLink to="/OfferRide">Offer Ride</NavLink>
               </p>
-              <p>
+              <p onClick={hideMenu}>
                 <NavLink to="/Rewards">Rewards</NavLink>
               </p>
-              <p>
+              <p onClick={hideMenu}>
                 <NavLink to="/FAQ">FAQ </NavLink>
               </p>
             </div>
@@ -86,10 +91,12 @@ const Navbar = () => {
               ) : (
                 <>
                   <NavLink to="/SignIn">
-                    <p>Sign in</p>
+                    <p onClick={hideMenu}>Sign in</p>
                   </NavLink>
                   <NavLink to="/SignUp">
-                    <button type="button">Sign up</button>
+                    <button type="button" onClick={hideMenu}>
+                      Sign up
+                    </button>
                   </NavLink>
                 </>
               )}
