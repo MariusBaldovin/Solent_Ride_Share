@@ -150,7 +150,10 @@ const Home = () => {
               </>
             )}
           </div>
-          <Link to="/RidesOffered" className="find-a-ride-button">
+          <Link
+            to={`/RidesOffered?location=${location}&date=${date}&time=${time}`}
+            className="find-a-ride-button"
+          >
             <div className="solent__find-a-ride">Find a Ride</div>
           </Link>
         </div>
