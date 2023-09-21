@@ -12,7 +12,6 @@
     padding: 10px;
     text-align: center;
     border-radius: 16px;
-    /* Apply border-radius to all input types */
     font-size: 18.8px;
     font-weight: 400;
     margin: 0 auto;
@@ -39,7 +38,7 @@
     margin-bottom: 40px;
     position: relative;
     bottom: 300px;
-    left: 100px;
+    left: 90px;
 }
 
 .seats-available {
@@ -84,12 +83,14 @@
 }
 
 .solent__offer-a-ride {
-    font-family: "Inter-Bold", Helvetica;
+
+    left: 36px;
     font-size: 16.7px;
     font-weight: 700;
-    left: 36px;
     letter-spacing: 0;
     line-height: normal;
+    position: relative;
+    text-align: center;
     white-space: nowrap;
 }
 
@@ -100,7 +101,7 @@
 }
 
 /* Tablet Styles */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
     .offer-ride-container {
         padding: 10px;
         /* Adjust padding for smaller screens */
@@ -131,7 +132,7 @@
 }
 
 /* Mobile Styles */
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 600px) {
 
     /* For mobile screens */
     .solent__dash-img {

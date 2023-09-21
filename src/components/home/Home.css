@@ -6,31 +6,36 @@
     background-position: top;
     height: 100vh;
     width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 
 /*Your Commute your Way
  Welcome to Solent RideShare!*/
+
 .solent__label {
-    height: auto;
-    width: 35%;
+    width: 100%;
+    display: flex;
+}
+
+.solent__slogan {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
     background-color: #000000b2;
-    overflow: hidden;
-    padding: 2em;
+    padding: 1em;
+    margin: 1em 0 0 1em;
     border-radius: 16px;
-    top: 3em;
-    left: 20px;
-    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(5px);
 }
 
 .solent__label .solent__slogan {
-    color: transparent;
     font-family: "Inter-Bold", Helvetica;
-    font-size: 3rem;
+    font-size: 3em;
     font-weight: 700;
     letter-spacing: 0;
-    line-height: 67.9px;
-    width: 100%;
 }
 
 .solent__label .solent__text-wrapper {
@@ -42,221 +47,67 @@
     color: #caca07;
 }
 
-/* find a ride search div */
-.searching {
-    background-color: #000000b2;
-    border-radius: 16px;
-    height: 80px;
-    max-width: 789px;
-    margin: 150px 0 0 20px;
-    /* Use margin to center vertically and horizontally */
-    padding: 0 20px;
-    /* Add padding for spacing on the sides */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-}
-
-
-/* find a ride button */
-.searching .find-a-ride-button {
-    background-color: #af1904;
-    border-radius: 16px;
-    height: 43px;
+.search-container {
     width: 100%;
-    max-width: 159px;
-    color: #ffffff;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: auto 10px;
-
-
-
-}
-
-/* find a ride text */
-.searching .solent__find-a-ride {
-    font-size: 16.7px;
-    font-weight: 700;
-    letter-spacing: 0;
-    line-height: normal;
-    position: relative;
-    text-align: center;
-    white-space: nowrap;
-}
-
-/* Hover effect: change background color and text color */
-.searching .find-a-ride-button:hover {
-    background-color: #ffffff;
-    color: #af1904;
-    transition: fill ease-in 0.3s;
-}
-
-/*  pick up location, date and time */
-.searching .solent__pickup-location,
-.searching .solent__pickup-date,
-.searching .solent__pickup-time {
-    color: #ffffff;
-    font-size: 18.8px;
-    font-weight: 400;
-    letter-spacing: 0;
-    line-height: normal;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: auto;
-}
-
-/* placeholder color*/
-.pickup__input-box::placeholder {
-    color: grey;
-}
-
-/* Pickup Location input */
-.pickup__input-box {
-    font-size: 16px;
-    font-weight: 400;
-    top: 23px;
-    width: 180px;
-    border-radius: 16px;
-    text-align: center;
-}
-
-.pickup__location {
-    text-align: center;
-}
-
-/* Date input */
-input[type="date"] {
-    font-size: 16px;
-    font-weight: 400;
-    border-radius: 16px;
-    top: 23px;
-    width: 140px;
-    text-align: center;
-}
-
-/* Time input */
-input[type="time"] {
-    font-size: 16px;
-    font-weight: 400;
-    border-radius: 16px;
-    top: 23px;
-    width: 90px;
-    text-align: center;
-}
-
-.solent__pickup-date svg,
-.solent__pickup-time svg {
-    margin-left: 5px;
-
-
-
-}
-
-/* Style SVG elements to look like links when hovered */
-.solent__pickup-date svg:hover,
-.solent__pickup-time svg:hover {
-    cursor: pointer;
-    /* Change cursor to pointer when hovering */
-    fill: #af1904;
-    /* Change fill color on hover to indicate interactivity */
-    transition: fill ease-in 0.3s;
+    justify-content: flex-start;
+    margin: 6em 0 0 3em;
 }
 
 /* Add responsiveness for tablet */
-@media screen and (max-width: 768px) {
-    .solent__background {
-        height: 80vh;
-    }
+@media screen and (max-width: 1024px) {
 
     .solent__label {
-        padding: 0 10px;
+        margin-top: 2em;
+        text-align: center;
+        justify-content: center;
     }
 
     .solent__slogan {
-        font-size: 1rem;
-
-    }
-
-    .solent__text-wrapper,
-    .welcome__span {
-        display: block;
-        line-height: 1.5;
-    }
-
-    .searching {
-        height: auto;
-        margin: o auto;
-        padding: 10px;
+        display: flex;
         flex-direction: column;
-        align-items: flex-start;
-        position: relative;
-        top: 6rem;
-
+        width: 60%;
+        background-color: #000000b2;
+        padding: 1em;
+        border-radius: 16px;
+        overflow: hidden;
     }
 
-    /* Style adjustments for child elements within .searching */
-    .solent__pickup-location,
-    .solent__pickup-date,
-    .solent__pickup-time,
-    .find-a-ride-button {
-        margin-bottom: 10px;
-        width: 100%;
-        padding: 5px;
-        border-radius: 10px;
+    .solent__label .solent__slogan {
+        font-size: 2.5rem;
+    }
+
+    .search-container {
+        justify-content: center;
+        margin: 10em 0 0 0;
     }
 
 }
 
 /* Add responsiveness for even smaller screens */
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 600px) {
     .solent__background {
-        height: 80vh;
+        align-items: center;
     }
 
     .solent__label {
-        width: 60%;
+        margin-top: 2em;
+        width: 70%;
+        justify-content: center;
         text-align: center;
-        margin: 0 auto;
-        left: 0;
+    }
+
+    .solent__slogan {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        background-color: #000000b2;
+        padding: 1em;
+        border-radius: 16px;
+        overflow: hidden;
     }
 
     .solent__label .solent__slogan {
         font-size: 1.5rem;
-    }
-
-    .searching {
-        margin: 20px;
-        padding: 10px;
-
-    }
-
-    .pickup__input-box,
-    input[type="date"],
-    input[type="time"] {
-        width: 50%;
-    }
-
-    /* find a ride button in mobile version */
-    .searching .find-a-ride-button {
-        margin: 10px auto;
-        height: 30px;
-        width: 120px;
-    }
-
-    /* find a ride text in mobile version */
-    .searching .solent__find-a-ride {
-        font-size: 14px;
-    }
-
-    /*  pick up location, date and time */
-    .searching .solent__pickup-location,
-    .searching .solent__pickup-date,
-    .searching .solent__pickup-time {
-        font-size: 14px;
     }
 }

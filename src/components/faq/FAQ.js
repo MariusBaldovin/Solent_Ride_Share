@@ -15,30 +15,32 @@ const FAQItem = styled.div`
   cursor: pointer;
   transition: background-color 0.3s, border-color 0.3s;
   position: relative;
+  background-color: ${(props) => (props.isOpen ? "#af1904" : "transparent")};
 `;
 
 const FAQQuestion = styled.div`
   font-weight: bold;
-  transition: color 0.3s; 
-  &:hover {
-    color: #af1904; 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: color 0.3s;
+
+  &.open {
+    color: white;
+  }
 `;
 
 const FAQAnswer = styled.div`
-  color: white; /* Set the answer text color to #af1904 */
-  margin-top: 20px; /* Add a line space after the question */
+  color: white;
+  margin-top: 20px;
+  display: ${(props) => (props.isOpen ? "block" : "none")};
 `;
 
 const FAQIcon = styled.div`
-  position: absolute;
-  top: 50%;
-  right: 10px;
-  transform: translateY(-50%);
   font-size: 1.2rem;
 `;
 
 const FAQ = () => {
-  // Questions and answers function
   const faqItems = [
     {
       question: "What is Solent Ride Sharing App?",
@@ -72,37 +74,35 @@ const FAQ = () => {
     },
   ];
 
-  // Create state to keep track of which accordion item is open.
   const [openItemIndex, setOpenItemIndex] = useState(null);
 
-  // Function to toggle an accordion item open/close.
   const toggleAccordion = (index) => {
     if (openItemIndex === index) {
-      // If the clicked item is already open, close it.
       setOpenItemIndex(null);
     } else {
-      // Close any previously open item and open the clicked item.
       setOpenItemIndex(index);
     }
   };
 
   return (
     <FAQContainer>
-      <br></br> <br></br> <br></br>
+      <br /> <br /> <br />
       <h1>FAQ</h1>
-      <br></br> <br></br> <br></br>
+      <br /> <br /> <br />
       {faqItems.map((item, index) => (
         <FAQItem
           key={index}
-          className={openItemIndex === index ? "open" : ""}
+          isOpen={openItemIndex === index}
           onClick={() => toggleAccordion(index)}
         >
-          <FAQQuestion>{item.question}</FAQQuestion>
-          <FAQIcon>{openItemIndex === index ? "-" : "+"}</FAQIcon>
-          {openItemIndex === index && <FAQAnswer>{item.answer}</FAQAnswer>}
+          <FAQQuestion className={openItemIndex === index ? "open" : ""}>
+            {item.question}
+            <FAQIcon>{openItemIndex === index ? "-" : "+"}</FAQIcon>
+          </FAQQuestion>
+          <FAQAnswer isOpen={openItemIndex === index}>{item.answer}</FAQAnswer>
         </FAQItem>
       ))}
-      <br></br> <br></br>
+      <br /> <br />
     </FAQContainer>
   );
 };

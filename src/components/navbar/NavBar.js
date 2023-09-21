@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./NavBar.css";
 import logo from "../../assets/logo.svg";
 import { RiMenu3Line, RiCloseLine } from "react-icons/ri";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { useAuth } from "../context/Authcontext"; // Import the useAuth hook
 
 const Navbar = () => {
@@ -16,7 +16,9 @@ const Navbar = () => {
     <div className="solent__navbar">
       <div className="solent__navbar-links">
         <div className="solent__navbar-links_logo">
-          <img src={logo} alt="logo" />
+          <Link to="/">
+            <img src={logo} alt="logo" />
+          </Link>
         </div>
         <div className="solent__navbar-links_container">
           <p>
@@ -36,13 +38,13 @@ const Navbar = () => {
       <div className="solent__navbar-sign">
         {currentUser ? ( // Check if the user is logged in
           <>
-            <p>Welcome {currentUser.displayName}</p>
+            <p className="welcome-name">{currentUser.displayName}</p>
             <button onClick={signOut}>Sign Out</button>
           </>
         ) : (
           <>
             <NavLink to="/SignIn">
-              <p>Sign in</p>
+              <p>Log in</p>
             </NavLink>
             <NavLink to="/SignUp">
               <button type="button">Sign up</button>
@@ -51,21 +53,19 @@ const Navbar = () => {
         )}
       </div>
       <div className="solent__navbar-menu">
-        {toggleMenu ? (
-          <RiCloseLine
-            color="#fff"
-            size={27}
-            onClick={() => setToggleMenu(false)}
-          />
-        ) : (
-          <RiMenu3Line
-            color="#fff"
-            size={27}
-            onClick={() => setToggleMenu(true)}
-          />
-        )}
+        <RiMenu3Line
+          color="#fff"
+          size={27}
+          onClick={() => setToggleMenu(true)}
+        />
         {toggleMenu && (
           <div className="solent__navbar-menu_container scale-up-center">
+            <RiCloseLine
+              className="close-button"
+              color="#fff"
+              size={40}
+              onClick={() => setToggleMenu(false)}
+            />
             <div className="solent__navbar-menu_container-links">
               {/* Menu links */}
               <p onClick={hideMenu}>
@@ -91,7 +91,7 @@ const Navbar = () => {
               ) : (
                 <>
                   <NavLink to="/SignIn">
-                    <p onClick={hideMenu}>Sign in</p>
+                    <p onClick={hideMenu}>Log in</p>
                   </NavLink>
                   <NavLink to="/SignUp">
                     <button type="button" onClick={hideMenu}>

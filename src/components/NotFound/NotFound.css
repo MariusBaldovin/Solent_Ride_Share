@@ -1,0 +1,35 @@
+.not__found_container {
+    background-color: black;
+    height: 100vh;
+    color: #ffffff;
+}
+
+.not__found-page {
+    font-size: 50px;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+}
+
+.not__found-message {
+    font-size: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    color: #af1904;
+}
+
+.back__home {
+    font-size: 50px;
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+}
+
+.back__home:hover {
+    color: #af1904;
+    transition: fill ease-in 0.3s;
+}

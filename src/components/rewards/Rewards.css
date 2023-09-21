@@ -5,6 +5,13 @@
     padding: 80px;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    /* Align text to the left */
+}
+
+.rewards-container h2 {
+    font-size: 45px;
+    padding: 10px;
 }
 
 /* Reward Items */
@@ -12,6 +19,8 @@
     display: flex;
     align-items: flex-start;
     margin: 15px 0;
+    justify-content: flex-start;
+    /* Align items to the left */
 }
 
 /* Reward Icons */
@@ -24,10 +33,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-shrink: 0;
+    /* Prevent icons from growing */
 }
 
 .ride-points {
-    background-color: #ffcc00;
+    background-color: #FF9900;
     /* Customize the icon background color */
     color: #333;
 }
@@ -38,19 +49,22 @@
 }
 
 .exclusive-promotions {
-    background-color: #e74c3c;
+    background-color: rgb(9, 221, 9);
     color: #fff;
 }
 
 /* Reward Details */
 .reward-details h3 {
-    font-size: 24px;
+    font-size: 28px;
+    color: #af1904;
     margin: 0;
 }
 
 .reward-details p {
     color: white;
     margin: 10px 0;
+    font-size: 18px;
+    /* Increase the font size */
 }
 
 /* Progress Bar */
@@ -62,7 +76,7 @@
 }
 
 .progress-fill {
-    background-color: #ffcc00;
+    background-color: #FF9900;
     /* Customize the progress fill color */
     height: 100%;
     border-radius: 5px;
@@ -75,7 +89,8 @@
 .reward-info {
     display: flex;
     justify-content: space-between;
-    font-size: 14px;
+    font-size: 16px;
+    /* Increase the font size */
     color: white;
     margin-top: 10px;
 }

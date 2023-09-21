@@ -60,7 +60,6 @@
     margin-bottom: 10px;
     color: #af1904;
     font-weight: bold;
-    font-family: var(--font-family);
 }
 
 
@@ -69,12 +68,13 @@
     font-weight: bold;
     margin-bottom: 20px;
     flex-basis: 25%;
-    font-family: var(--font-family);
+    font-size: 22px;
 }
 
 .solent__quick-links p {
     font-weight: bold;
     margin-bottom: 10px;
+    font-size: 18px;
 }
 
 /* Quick links */
@@ -94,12 +94,14 @@
     flex-basis: 30%;
     /* Adjust the width as needed */
     margin-bottom: 20px;
+    font-size: 22px;
 }
 
 .solent__contact p {
     font-weight: bold;
     margin-bottom: 10px;
     color: #fff;
+    font-size: 18px;
 }
 
 .solent__contact a {
@@ -114,7 +116,6 @@
     font-weight: bold;
     margin-bottom: 20px;
     flex-basis: 25%;
-    font-family: var(--font-family);
 }
 
 .solent__contact a:hover {

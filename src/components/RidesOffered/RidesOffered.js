@@ -3,6 +3,8 @@ import { useLocation } from "react-router-dom";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../firebase";
 import "./RidesOffered.css";
+import SearchBar from "../SearchBar/SearchBar";
+import { Link } from "react-router-dom";
 
 const RidesOffered = () => {
   const [rides, setRides] = useState([]);
@@ -43,10 +45,14 @@ const RidesOffered = () => {
 
   return (
     <div className="rides-offered-container">
-      <h1>Riders offered</h1>
+      <div className="search-bar-container">
+        <SearchBar />
+      </div>
+
+      <h1>Available Rides</h1>
       <div className="table-container">
         {rides.length === 0 ? (
-          <h1>No Rides available for your chosen Location or Date</h1>
+          <h2>No Rides available for your chosen Location or Date.</h2>
         ) : (
           <table>
             <thead>
@@ -70,6 +76,9 @@ const RidesOffered = () => {
           </table>
         )}
       </div>
+      <Link to="/" className="book-a-ride-button">
+        <div className="solent__book-a-ride">Book Ride</div>
+      </Link>
     </div>
   );
 };
