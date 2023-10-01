@@ -18,11 +18,7 @@ const Support = () => {
       </p>
       <p>
         Live Chat:{" "}
-        <a
-          href="https://your-live-chat-link.com"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <a href="#" target="_blank" rel="noopener noreferrer">
           Chat with us
         </a>
       </p>

@@ -76,9 +76,11 @@ const RidesOffered = () => {
           </table>
         )}
       </div>
-      <Link to="/" className="book-a-ride-button">
-        <div className="solent__book-a-ride">Book Ride</div>
-      </Link>
+      <div class="book-a-ride-button-container">
+        <Link to="/" className="book-a-ride-button">
+          <div className="solent__book-a-ride">Book Ride</div>
+        </Link>
+      </div>
     </div>
   );
 };

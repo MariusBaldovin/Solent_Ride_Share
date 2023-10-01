@@ -1,178 +1,171 @@
 /* background*/
 
 .rides-offered-container {
-    background-image: url("../../assets/background.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    height: 120vh;
-    justify-content: center;
-    align-items: center;
+  background-image: url("../../assets/background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: auto;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
 
 .search-bar-container {
-    margin: 20px 0 0 300px;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin: 2em 0 2em 0;
 }
 
 .rides-offered-container h1 {
-    color: #ffff;
-    margin: 10px auto;
-    font-size: 40px;
-
+  color: #ffff;
+  margin: 10px auto;
+  font-size: 40px;
 }
 
 .rides-offered-container h2 {
-    background-color: #000000b2;
-    color: #af1904;
-    margin: 10px auto;
-    font-size: 30px;
-
+  background-color: #000000b2;
+  color: #af1904;
+  margin: 10px auto;
+  font-size: 30px;
 }
 
 /* Style for the rides-offered-container */
 .rides-offered-container {
-    text-align: center;
-    padding: 20px;
+  text-align: center;
+  padding: 20px;
 }
 
 /* Style for the table-container */
 .table-container {
-    margin: 20px auto;
-    max-width: 800px;
-    overflow-x: auto;
-    border-radius: 16px;
+  margin: 20px auto;
+  max-width: 800px;
+  overflow-x: auto;
+  border-radius: 16px;
 }
 
 /* Style for the table */
 table {
-    width: 100%;
-    border-collapse: collapse;
+  width: 100%;
+  border-collapse: collapse;
 }
 
 /* Style for table headers */
 th {
-    background-color: #af1904;
-    color: #ffffff;
-    font-size: 25px;
-    text-align: center;
-    padding: 10px;
-    font-weight: bold;
-
+  background-color: #af1904;
+  color: #ffffff;
+  font-size: 25px;
+  text-align: center;
+  padding: 10px;
+  font-weight: bold;
 }
-
 
 /* Style for table cells */
 td {
-    padding: 10px;
-    border: 1px solid #af1904;
-    font-size: 20px;
+  padding: 10px;
+  border: 1px solid #af1904;
+  font-size: 20px;
 }
 
 /* Style for even rows */
 tr {
-    background-color: black;
-    color: #ffffff;
-    height: 50px;
+  background-color: black;
+  color: #ffffff;
+  height: 50px;
 }
 
 table {
-    width: 100%;
+  width: 100%;
 }
 
 /* Style for table headers and cells in the first row on hover */
 tr:hover {
-    background-color: #af1904;
+  background-color: #af1904;
+}
+
+.book-a-ride-button-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
 }
 
 /* find a ride button */
 .book-a-ride-button {
-    background-color: #af1904;
-    border-radius: 16px;
-    height: 43px;
-    width: 100%;
-    max-width: 159px;
-    color: #ffffff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: auto 10px;
-    position: relative;
-    left: 600px;
+  background-color: #af1904;
+  border-radius: 16px;
+  height: 43px;
+  width: 159px;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* book a ride text */
 .solent__book-a-ride {
-    font-size: 16.7px;
-    font-weight: 700;
-    letter-spacing: 0;
-    line-height: normal;
-    position: relative;
-    text-align: center;
-    white-space: nowrap;
+  font-size: 16.7px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: normal;
+  position: relative;
+  text-align: center;
+  white-space: nowrap;
 }
 
 /* Hover effect: change background color and text color */
 .book-a-ride-button:hover {
-    background-color: #ffffff;
-    color: #af1904;
-    transition: fill ease-in 0.3s;
+  background-color: #ffffff;
+  color: #af1904;
+  transition: fill ease-in 0.3s;
 }
 
 @media screen and (max-width: 1024px) {
-    .search-bar-container {
-        margin: 20px auto;
-        /* Center horizontally */
-        max-width: 90%;
-        /* Adjust the width as needed */
-    }
+  .search-bar-container {
+    margin: 20px auto;
+    /* Center horizontally */
+    max-width: 90%;
+    /* Adjust the width as needed */
+  }
 
-    /* Add any other tablet-specific styles here */
-    .rides-offered-container h1 {
-        font-size: 30px;
-        /* Adjust the font size as needed */
-    }
+  /* Add any other tablet-specific styles here */
+  .rides-offered-container h1 {
+    font-size: 30px;
+    /* Adjust the font size as needed */
+  }
 
-    .rides-offered-container h2 {
-        font-size: 25px;
-        /* Adjust the font size as needed */
-    }
+  .rides-offered-container h2 {
+    font-size: 25px;
+    /* Adjust the font size as needed */
+  }
 
-    /* Style adjustments for smaller screens within the table */
-    td {
-        font-size: 12px;
-        /* Adjust the font size as needed */
-    }
+  /* Style adjustments for smaller screens within the table */
+  td {
+    font-size: 12px;
+    /* Adjust the font size as needed */
+  }
 }
 
 @media screen and (max-width: 600px) {
-    .search-bar-container {
+  /* Add any other mobile-specific styles here */
+  .rides-offered-container h1 {
+    font-size: 24px;
+    /* Adjust the font size as needed */
+  }
 
-        /* Add a top margin to create space */
-        margin-bottom: 100px;
-        /* Add a bottom margin to create space */
-        max-width: 80%;
-        /* Ensure it doesn't exceed the container width */
-    }
+  .rides-offered-container h2 {
+    font-size: 20px;
+    /* Adjust the font size as needed */
+  }
 
-    /* Add any other mobile-specific styles here */
-    .rides-offered-container h1 {
-        font-size: 24px;
-        /* Adjust the font size as needed */
-    }
+  /* Style adjustments for smaller screens within the table */
+  td {
+    font-size: 10px;
+    /* Adjust the font size as needed */
+  }
 
-    .rides-offered-container h2 {
-        font-size: 20px;
-        /* Adjust the font size as needed */
-    }
-
-    /* Style adjustments for smaller screens within the table */
-    td {
-        font-size: 10px;
-        /* Adjust the font size as needed */
-    }
-
-    th {
-        font-size: 12px;
-        /* Adjust the font size as needed */
-    }
+  th {
+    font-size: 12px;
+    /* Adjust the font size as needed */
+  }
 }

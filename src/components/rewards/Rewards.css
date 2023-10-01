@@ -1,101 +1,100 @@
 /* Rewards Container */
 .rewards-container {
-    background-color: black;
-    color: white;
-    padding: 80px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-    text-align: left;
-    /* Align text to the left */
+  background-color: black;
+  color: white;
+  padding: 80px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  text-align: left;
+  /* Align text to the left */
 }
 
 .rewards-container h2 {
-    font-size: 45px;
-    padding: 10px;
+  font-size: 45px;
+  padding: 10px;
 }
 
 /* Reward Items */
 .reward-item {
-    display: flex;
-    align-items: flex-start;
-    margin: 15px 0;
-    justify-content: flex-start;
-    /* Align items to the left */
+  display: flex;
+  align-items: flex-start;
+  margin: 15px 0;
+  justify-content: flex-start;
+  /* Align items to the left */
 }
 
 /* Reward Icons */
 .reward-icon {
-    font-size: 32px;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    margin-right: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    /* Prevent icons from growing */
+  font-size: 32px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  /* Prevent icons from growing */
 }
 
 .ride-points {
-    background-color: #FF9900;
-    /* Customize the icon background color */
-    color: #333;
+  background-color: #ff9900;
+  /* Customize the icon background color */
+  color: #333;
 }
 
 .referral-program {
-    background-color: #3498db;
-    color: #fff;
+  background-color: #3498db;
+  color: #fff;
 }
 
 .exclusive-promotions {
-    background-color: rgb(9, 221, 9);
-    color: #fff;
+  background-color: rgb(9, 221, 9);
+  color: #fff;
 }
 
 /* Reward Details */
 .reward-details h3 {
-    font-size: 28px;
-    color: #af1904;
-    margin: 0;
+  font-size: 28px;
+  color: #af1904;
+  margin: 0;
 }
 
 .reward-details p {
-    color: white;
-    margin: 10px 0;
-    font-size: 18px;
-    /* Increase the font size */
+  color: white;
+  margin: 10px 0;
+  font-size: 18px;
+  /* Increase the font size */
 }
 
 /* Progress Bar */
 .progress-bar {
-    background-color: #ccc;
-    height: 10px;
-    border-radius: 5px;
-    margin-top: 10px;
+  background-color: #ccc;
+  height: 10px;
+  border-radius: 5px;
+  margin-top: 10px;
 }
 
 .progress-fill {
-    background-color: #FF9900;
-    /* Customize the progress fill color */
-    height: 100%;
-    border-radius: 5px;
-    text-align: right;
-    padding-right: 10px;
-    font-weight: bold;
+  background-color: #ff9900;
+  /* Customize the progress fill color */
+  height: 100%;
+  border-radius: 5px;
+  text-align: right;
+  padding-right: 10px;
+  font-weight: bold;
 }
 
 /* Reward Info */
 .reward-info {
-    display: flex;
-    justify-content: space-between;
-    font-size: 16px;
-    /* Increase the font size */
-    color: white;
-    margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+  /* Increase the font size */
+  color: white;
+  margin-top: 10px;
 }
 
 /* Space between Reward Items */
-.reward-item+.reward-item {
-    margin-top: 50px;
+.reward-item + .reward-item {
+  margin-top: 50px;
 }

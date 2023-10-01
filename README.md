@@ -140,7 +140,7 @@ For more details check [Firebase hosting documentation.](https://firebase.google
 
 ## License
 
-MIT License
+This project is licensed under the MIT License
 
 Copyright (c) 2023, Marius Baldovin
 
